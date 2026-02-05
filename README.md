@@ -1,6 +1,38 @@
 # Simulation_Divergence_Admixture
 
-Population divergence followed by admixture simulation using SLiM5 and tskit analysis.
+Population divergence followed by admixture simulation using SLiM and tskit analysis.
+
+## 🚀 Quick Start
+
+**Want to run this on your local computer?**
+
+```bash
+# 1. Download the repository
+git clone https://github.com/PA-GAGNAIRE/Simulation_Divergence_Admixture.git
+cd Simulation_Divergence_Admixture
+
+# 2. Run automated setup (Linux/macOS)
+./setup.sh
+
+# OR install manually:
+pip install -r requirements.txt
+
+# 3. Verify installation
+python check_environment.py
+
+# 4. Start Jupyter and run the notebook
+jupyter notebook divergence_admixture_simulation.ipynb
+```
+
+**Need detailed instructions?** See [INSTALLATION.md](INSTALLATION.md) for complete setup guide including:
+- Platform-specific instructions (Linux, macOS, Windows)
+- SLiM installation guide
+- Troubleshooting common issues
+- Virtual environment setup
+
+**Windows users**: We recommend using WSL (Windows Subsystem for Linux). See [INSTALLATION.md](INSTALLATION.md).
+
+---
 
 ## Overview
 
