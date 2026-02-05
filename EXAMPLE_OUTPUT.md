@@ -103,7 +103,45 @@ For the admixed population:
 - Bar plot showing accuracy of admixture simulation
 - Divergence-based ancestry estimates
 
-### 15. Summary Statistics Table
+### 15. Local Ancestry Visualization
+**NEW FEATURE**: Visualizes genomic mosaics of recombined ancestries
+
+**Main 4-Panel Figure:**
+- **Panel 1: F1-like Hybrids** - Individuals with balanced ~50:50 ancestry
+  - Large blocks from each parent population
+  - Few recombination breakpoints
+  - Colors show which population each genomic segment came from
+
+- **Panel 2: F2-like Hybrids** - Second generation patterns
+  - More recombination breakpoints than F1
+  - Smaller ancestry blocks
+  - Still balanced ancestry proportions
+
+- **Panel 3: Backcross-like Hybrids** - Skewed ancestry patterns
+  - Asymmetric proportions (e.g., 75:25)
+  - Results from crossing back to one parent
+
+- **Panel 4: Late-Generation Hybrids** - Fine-scale mosaics
+  - Many small ancestry blocks
+  - Numerous recombination breakpoints
+  - Shows cumulative effect of recombination
+
+Each horizontal bar represents one individual's genome along its length, with colors indicating ancestry origin.
+
+### 16. Detailed Ancestry Block Analysis
+**NEW FEATURE**: Quantitative analysis of ancestry blocks
+
+**Statistics per Sample:**
+- Total number of ancestry blocks
+- Mean, median, and max block sizes for each population
+- Number of recombination breakpoints
+
+**Histograms:**
+- Distribution of Population 1 ancestry block sizes
+- Distribution of Population 2 ancestry block sizes
+- Shows typical block size ranges for the simulation
+
+### 17. Summary Statistics Table
 Comprehensive table with:
 - Population names and IDs
 - Sample counts
@@ -142,9 +180,36 @@ Comprehensive table with:
    - Excess of low-frequency variants (typical for Wright-Fisher)
    - Shape reflects demographic history
 
-5. **Admixture Proportion**:
+6. **Admixture Proportion**:
    - Estimated admixture fraction should be close to specified value (f)
    - Small deviations expected due to genetic drift
+
+7. **Local Ancestry Patterns** (NEW):
+   - **F1-like hybrids**: 
+     - Large ancestry blocks (100s of kb)
+     - Roughly equal proportions from each parent (~50:50)
+     - Few recombination breakpoints (typically 1-5 per chromosome)
+   
+   - **F2-like hybrids**:
+     - Smaller blocks than F1 (tens of kb)
+     - Still balanced ancestry overall
+     - More breakpoints due to one generation of recombination
+   
+   - **Backcross patterns**:
+     - Skewed ancestry (e.g., 75:25 or 80:20)
+     - Block sizes intermediate between F1 and F2
+     - Asymmetric distribution of blocks
+   
+   - **Late-generation hybrids**:
+     - Very small blocks (few kb to tens of kb)
+     - Fine-scale mosaic pattern
+     - Many recombination breakpoints (10+ per chromosome)
+     - Approaches random mixing of ancestries
+   
+   - **Block size distributions**:
+     - Exponential-like distribution with long tail
+     - Larger blocks from more recent admixture
+     - Mean block size decreases with generation number
 
 ## Troubleshooting Common Issues
 

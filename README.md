@@ -105,6 +105,12 @@ The notebook produces:
   - **Dxy decomposition by mutation origin** (ancestral vs. new)
   - **Dxy vs split time analysis** (parameter sweep)
   - Admixture proportion analysis
+  - **Local ancestry mosaics** showing recombined ancestries along genomes
+    - F1 hybrids (balanced 50:50 ancestry)
+    - F2 hybrids (increased recombination)
+    - Backcross patterns (skewed ancestry)
+    - Late-generation hybrids (fine-scale mosaic)
+  - Ancestry block size distributions
 
 ## Analysis Components
 
@@ -118,7 +124,11 @@ The notebook produces:
 6. **Parameter Sweeps**: Explores how Dxy components change with varying split times
 7. **Population Genetics Statistics**: Calculates diversity (π), Tajima's D, FST, and divergence
 8. **Admixture Analysis**: Examines genetic ancestry proportions in the admixed population
-9. **Comprehensive Visualization**: Multi-panel figures showing temporal dynamics and theoretical comparisons
+9. **Local Ancestry Tracking**: Traces genomic segments back through the genealogy to determine source population
+   - Tracks ancestry along the genome at fine spatial resolution
+   - Identifies recombination breakpoints between ancestries
+   - Classifies individuals as F1-like, F2-like, backcross-like, or late-generation based on patterns
+10. **Comprehensive Visualization**: Multi-panel figures showing temporal dynamics and theoretical comparisons
 
 ## Model Details
 
@@ -175,6 +185,61 @@ The notebook produces several visualizations:
 2. **Stacked area plot**: Dxy components over time
 3. **Proportions**: Relative contributions as a function of split time
 4. **Accumulation rates**: Rate of Dxy increase, compared to theoretical expectation
+
+## Local Ancestry Visualization
+
+The notebook includes comprehensive visualization of how hybridization creates genomic mosaics through recombination. This analysis shows local ancestry patterns across different hybrid generations:
+
+### What is Visualized
+
+For each individual in the admixed population, the analysis traces genomic segments back through the tree sequence to determine which source population (Population 1 or Population 2) each segment originated from.
+
+### Hybrid Generation Types
+
+The visualization categorizes individuals into four types based on their ancestry patterns:
+
+1. **F1-like Hybrids**
+   - Balanced ancestry (~50% from each parent population)
+   - Large, continuous blocks of ancestry
+   - Few recombination breakpoints
+   - Represents first-generation crosses
+
+2. **F2-like Hybrids**
+   - Balanced ancestry but more recombination
+   - Intermediate number of ancestry blocks
+   - Represents second-generation offspring
+
+3. **Backcross-like Hybrids**
+   - Skewed ancestry (e.g., 75% from one parent, 25% from other)
+   - Results from crossing F1 back to one parental population
+   - Asymmetric patterns
+
+4. **Late-generation Hybrids**
+   - Fine-scale mosaic with many small ancestry blocks
+   - Numerous recombination breakpoints
+   - Results from multiple generations of admixture
+
+### Color Coding
+
+- **Blue**: Ancestry from Population 1
+- **Red**: Ancestry from Population 2  
+- **Gray**: Ancestral (pre-split) or uncertain ancestry
+
+### Block Size Analysis
+
+The analysis also provides:
+- Distribution of ancestry block sizes for each population
+- Statistics on block lengths (mean, median, max)
+- Number of recombination breakpoints per individual
+- Histograms showing block size distributions
+
+### Interpretation
+
+These visualizations demonstrate:
+- How recombination breaks up parental genomes over generations
+- The stochastic nature of inheritance and recombination
+- Differences between early and late-generation hybrids
+- The genomic signature of different admixture scenarios
 
 ## Troubleshooting
 
