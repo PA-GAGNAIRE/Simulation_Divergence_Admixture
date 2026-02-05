@@ -2,6 +2,11 @@
 
 Population divergence followed by admixture simulation using SLiM and tskit analysis.
 
+> **📥 New to this repository?** Check out:
+> - **[QUICKSTART.md](QUICKSTART.md)** - 5-minute setup guide
+> - **[DOWNLOAD_GUIDE.md](DOWNLOAD_GUIDE.md)** - Complete navigation & download options
+> - **[INSTALLATION.md](INSTALLATION.md)** - Detailed platform-specific setup
+
 ## 🚀 Quick Start
 
 **Want to run this on your local computer?**
