@@ -141,7 +141,60 @@ Each horizontal bar represents one individual's genome along its length, with co
 - Distribution of Population 2 ancestry block sizes
 - Shows typical block size ranges for the simulation
 
-### 17. Summary Statistics Table
+### 17. Tract Length Decay Analysis
+**NEW FEATURE**: Analysis of admixture tract length decrease over time
+
+**Tract Length Statistics:**
+- Number of Population 1 ancestry tracts
+- Mean, median, min, and max tract lengths
+- Hybrid index (h) - proportion of genome from Population 1
+- Time since admixture (t)
+
+**Analytical Prediction:**
+- Formula: L = 1 / [(1-h) × r × (t-1)]
+- Predicted mean tract length based on theory
+- Observed/Predicted ratio for validation
+
+**Two-Panel Visualization:**
+
+**Panel 1: Tract Length Distribution**
+- Histogram of observed tract lengths (in kb)
+- Red dashed line: Observed mean
+- Green dashed line: Predicted mean
+- Shows distribution shape and comparison with theory
+
+**Panel 2: Decay Curve**
+- X-axis: Generations since admixture (t)
+- Y-axis: Mean tract length (kb)
+- Green curve: Analytical prediction showing 1/(t-1) decay
+- Red point: Observed value at current time point
+- Annotation showing observed mean
+- Parameter box (h, r, t values)
+
+**Interpretation Text:**
+- Explains decay pattern
+- Notes rapid decay in early generations
+- Shows agreement with theoretical prediction
+- Discusses factors affecting decay rate
+
+### 18. Multi-Generation Tract Length Analysis (Optional)
+**NEW FEATURE**: Full decay curve across multiple time points
+
+When enabled (`run_multi_generation = True`):
+- Runs simulations at multiple time points
+- Collects tract lengths at t = 1, 2, 3, 5, 10, 20, 50 generations
+- Creates comprehensive decay curve
+
+**Comprehensive Plot:**
+- Green curve: Smooth analytical prediction
+- Red line with points: Observed mean tract lengths
+- Shows complete decay pattern from admixture to late generations
+- Demonstrates rapid initial decay followed by slower decrease
+- Validates theoretical predictions across time
+
+**Note**: Time-consuming analysis, disabled by default
+
+### 19. Summary Statistics Table
 Comprehensive table with:
 - Population names and IDs
 - Sample counts
@@ -210,6 +263,43 @@ Comprehensive table with:
      - Exponential-like distribution with long tail
      - Larger blocks from more recent admixture
      - Mean block size decreases with generation number
+
+8. **Tract Length Decay** (NEW):
+   - **Theoretical relationship**: L = 1/[(1-h)r(t-1)]
+     - Mean tract length decreases as 1/(t-1) with time
+     - Decay rate proportional to recombination rate (r)
+     - Affected by hybrid index (h)
+   
+   - **Early generations** (t = 1-5):
+     - Very long tracts (100s of kb to Mb)
+     - Rapid decrease in mean length
+     - High variance between individuals
+     - Most dramatic decay phase
+   
+   - **Intermediate generations** (t = 5-20):
+     - Medium tracts (10s to 100s of kb)
+     - Continued decay but slower rate
+     - More uniform across individuals
+     - Follows 1/(t-1) relationship closely
+   
+   - **Late generations** (t > 20):
+     - Short tracts (few to tens of kb)
+     - Slow, asymptotic decay
+     - Approaches equilibrium
+     - Very small tracts dominate
+   
+   - **Observed vs Predicted**:
+     - Ratio typically 0.8-1.2 (good agreement)
+     - Some deviation due to:
+       - Window resolution effects
+       - Stochastic variation
+       - Small sample size
+     - Better agreement with larger genomes and more samples
+   
+   - **Distribution shape**:
+     - Exponential decay with long tail
+     - Many short tracts, few long tracts
+     - Reflects cumulative recombination events
 
 ## Troubleshooting Common Issues
 

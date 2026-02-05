@@ -241,6 +241,64 @@ These visualizations demonstrate:
 - Differences between early and late-generation hybrids
 - The genomic signature of different admixture scenarios
 
+## Tract Length Decay Analysis
+
+The notebook includes analysis of how admixture tract lengths decrease over time due to recombination, comparing observed patterns with theoretical predictions.
+
+### Theory
+
+After admixture, recombination progressively breaks up ancestry blocks. The mean length of ancestry tracts from one source population decreases according to:
+
+**L = 1 / [(1-h) × r × (t-1)]**
+
+Where:
+- **L** = mean tract length (in base pairs)
+- **h** = hybrid index (proportion of genome from population 1)
+- **r** = recombination rate per base pair per generation
+- **t** = number of generations since admixture formation
+
+### What is Analyzed
+
+1. **Observed Tract Lengths**
+   - Extracts all ancestry tracts from population 1
+   - Calculates mean, median, and distribution
+   - Counts number of tracts per individual
+
+2. **Analytical Predictions**
+   - Calculates hybrid index from observed ancestry proportions
+   - Applies theoretical formula for expected mean tract length
+   - Compares observed vs predicted values
+
+3. **Temporal Dynamics**
+   - Shows rapid decay in early generations
+   - Demonstrates 1/(t-1) relationship
+   - Optional multi-generation analysis shows full decay curve
+
+### Visualizations
+
+The analysis produces:
+- **Distribution plot**: Histogram of observed tract lengths with mean markers
+- **Decay curve**: Mean tract length vs generations since admixture
+  - Green line: Analytical prediction
+  - Red point: Observed value at current time
+  - Shows rapid decrease followed by slower decay
+- **Optional**: Full decay curve across multiple time points
+
+### Key Observations
+
+- Tract lengths decrease rapidly in early generations
+- Decay rate depends on recombination rate and hybrid index
+- Longer tracts persist longer due to stochastic variation
+- Good agreement with theory validates simulation accuracy
+
+### Applications
+
+This analysis is useful for:
+- Dating admixture events from tract length distributions
+- Understanding recombination's role in genome shuffling
+- Validating simulation parameters against real data
+- Educational demonstrations of recombination effects
+
 ## Troubleshooting
 
 ### SLiM not found
