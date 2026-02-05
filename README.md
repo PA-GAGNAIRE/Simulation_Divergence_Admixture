@@ -28,6 +28,14 @@ Required packages:
 - matplotlib
 - pandas
 
+### Verify Environment Setup
+Run the environment check script to verify your setup:
+```bash
+python check_environment.py
+```
+
+This will verify that Python, SLiM, and all required packages are properly installed.
+
 ## Usage
 
 ### Running the Notebook
