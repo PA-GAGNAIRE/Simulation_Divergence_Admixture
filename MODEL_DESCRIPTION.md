@@ -203,6 +203,9 @@ Genetic estimates improve with:
 1. **SLiM 4**:
    Haller, B. C., & Messer, P. W. (2023). SLiM 4: Multispecies Eco-Evolutionary Modeling. 
    *American Naturalist*, 201(5), E127-E139.
+   
+   Note: This notebook is compatible with SLiM 4.0+. The simulation uses standard
+   SLiM features including tree sequence recording (available since SLiM 3.7+).
 
 2. **Tree Sequences**:
    Kelleher, J., et al. (2018). Efficient Coalescent Simulation and Genealogical Analysis 

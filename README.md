@@ -12,7 +12,8 @@ This repository contains a Jupyter notebook that simulates and analyzes a demogr
 ## Requirements
 
 ### Software
-- **SLiM** (version 4.0 or later): Download from https://messerlab.org/slim/
+- **SLiM** (version 4.0 or later recommended, SLiM 4.1+ for best compatibility): Download from https://messerlab.org/slim/
+  - Note: This notebook uses SLiM's tree sequence recording features available in SLiM 4.0+
 - **Python** (version 3.8 or later)
 
 ### Python Packages
